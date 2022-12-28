@@ -1,0 +1,129 @@
+<section>
+
+  <div class="signature-pad">
+    <div class="signature-pad--body">
+      &nbsp;Firma Digital
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="box">
+
+    <div class="container">
+
+
+
+      <form [formGroup]="form">
+
+        <div class="header">
+          <h1>Datos de Usuario</h1>
+          <hr>
+          <p>Introduce los datos Solicidados</p>
+        </div>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            formControlName="name"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*Tu nombre es requerido</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="text"
+            name="lastName"
+            placeholder="Apellido Paterno"
+            formControlName="lastName"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*Tu apellido paterno es requerido</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="text"
+            name="secondSurName"
+            placeholder="Apellido Materno"
+            formControlName="secondSurName"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*Tu apellido materno es requerido</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            formControlName="email"
+            [email]="true"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*Por favor introduce un E-mail valido</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline" class="datesField">
+          <mat-label>Fecha de Nacimiento*</mat-label>
+          <input readonly matInput  [matDatepicker]="picker" formControlName="birthDate">
+          <mat-datepicker #picker></mat-datepicker>
+          <!-- <mat-hint>DD/MM/YYYY</mat-hint> -->
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-error>
+            <span class="form_error">
+              <strong>*Por favor introduce tu Fecha de Nacimiento</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+
+        <!-- <div class="btnContainer">
+          <div class="contenedor">
+            <button class="btn" [disabled]="form.invalid || form.disabled" type="submit" (click)="onSubmit()"> <a> Registrarte </a></button>
+          </div>
+        </div> -->
+
+        <!-- <button mat-raised-button color="accent">Accent</button>
+        <button mat-raised-button disabled>Disabled</button> -->
+
+        <button class="submit" [disabled]="form.invalid || form.disabled" mat-raised-button color="accent" type="submit" (click)="onSubmit()">Enviar</button>
+
+      </form>
+
+
+    </div>
+
+  </div>
+</section>
+

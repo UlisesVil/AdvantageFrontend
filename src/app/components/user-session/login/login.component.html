@@ -1,0 +1,103 @@
+<section>
+  <div class="box">
+
+    <div class="square" style="--i:0;">1</div>
+    <div class="square" style="--i:1;">2</div>
+    <div class="square" style="--i:2;">3</div>
+    <div class="square" style="--i:3;">4</div>
+    <div class="square" style="--i:4;">5</div>
+    <div class="square" style="--i:5;">6</div>
+
+    <div class="square" style="--i:6;">7</div>
+    <div class="square" style="--i:7;">8</div>
+    <div class="square" style="--i:8;">9</div>
+    <div class="square" style="--i:9;">10</div>
+    <div class="square" style="--i:10;">11</div>
+    <div class="square" style="--i:11;">12</div>
+
+    <div class="container">
+
+      <form [formGroup]="form">
+
+        <div class="header">
+          <h2>Login</h2>
+          <hr>
+          <p>Inicio de Session</p>
+        </div>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="email"
+            name="email"
+            placeholder="E-mail"
+            formControlName="email"
+            [email]="true"
+            required
+          >
+          <mat-error>
+            <span class="form_error"> <!-- style="color: aqua;" -->
+              <strong>*Por favor introduce un E-mail valido</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="password"
+            name="password"
+            placeholder="Password"
+            formControlName="password"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*La contraseña es requerida</strong>
+              <strong>*Debe tener entre 8 y 16 caracteres</strong>
+              <strong>-Tener al menos un carácter en minúscula</strong>
+              <strong>-Tener al menos un carácter numérico</strong>
+              <strong>-Tener al menos un carácter especial</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="group">
+          <input
+            matInput
+            type="password"
+            name="confirmPassword"
+            placeholder="Confirm Password"
+            formControlName="confirmPassword"
+            required
+          >
+          <mat-error>
+            <span class="form_error">
+              <strong>*Confirma tu Contraseña</strong> <br>
+              <strong>o tu contraseña no coincide</strong>
+            </span>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="btnContainer">
+          <div class="contenedor">
+            <!-- <div class="btn" (click)="onSubmitlogin()"><a>Iniciar Sesion</a></div> -->
+            <button class="btn" [disabled]="form.invalid || form.disabled" type="submit" (click)="onSubmitlogin()"> <a> Inicia Session </a></button>
+
+          </div>
+        </div>
+<!--
+        <button class="submit" mat-raised-button type="submit" (click)="onSubmitlogin()">Login</button> -->
+
+        <div class="toSignUp">
+          No te has registrado aun? click
+          <span [routerLink]="['/session/register']">
+            Aqui !!!
+          </span>
+        </div>
+      </form>
+
+
+    </div>
+  </div>
+</section>

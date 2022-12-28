@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */*
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+.wrapper{
+  background: black;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  /* flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  color: whitesmoke;
+  border: 1px solid greenyellow;
+}
