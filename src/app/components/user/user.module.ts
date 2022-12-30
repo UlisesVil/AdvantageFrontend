@@ -8,8 +8,6 @@ import { UserMainComponent } from './user-main/user-main.component';
 import { MaterialModule } from "../../shared/material.module";
 
 
-
-
 @NgModule({
   declarations: [UserMainComponent],
   imports: [

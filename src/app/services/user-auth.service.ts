@@ -24,10 +24,4 @@ export class UserAuthService {
     let headers= new HttpHeaders().set('Content-Type','application/json');
     return this._http.post(this.url+'login',params,{headers:headers});
   }
-
-  // getUser(userEmail):Observable<any>{
-  //   let headers= new HttpHeaders().set('Content-Type','application/json');
-  //   return this._http.post(this.url+'login/getUser',userEmail,{headers:headers});
-  // }
-
 }

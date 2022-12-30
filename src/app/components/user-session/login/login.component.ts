@@ -4,7 +4,6 @@ import { UserAuthService } from '../../../services/user-auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidation } from '../../../utils/matchPassword';
-// import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +19,6 @@ export class LoginComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _userService: UserAuthService,
     private _router: Router,
-    // private _route: ActivatedRoute
   ) {
     this.user = new UserAuthModel("","","","","");
     this.formCreate();
@@ -40,10 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmitlogin(){
-    console.log(this.form.value);
     try {
-
-
       if(this.form.valid){
         this.user={
           userName: '',
@@ -56,11 +51,6 @@ export class LoginComponent implements OnInit {
           res=>{
             localStorage.setItem('token',res.token);
             localStorage.setItem('payload', JSON.stringify(res.payload));
-
-            console.log(res.token);
-            console.log(res.payload);
-            console.log(res.message);
-
             setTimeout(()=>{
               if(res.payload){
                 this._router.navigate(['/user/user-main']).then(()=>{
@@ -68,18 +58,13 @@ export class LoginComponent implements OnInit {
                 });
               };
             },3000);
-
           },error=>{
             console.log(<any>error);
-            // this.errorWarning=<any>error.error.message;
-            // console.log(this.errorWarning);
           }
         );
       }
-
     } catch (error) {
         console.log(error);
     }
   }
-
 }

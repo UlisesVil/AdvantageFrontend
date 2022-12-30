@@ -1,3 +1,16 @@
+.wrap{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../../assets/Images/backgrounds/login03.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:top;
+  background-attachment: fixed;
+  overflow: hidden;
+}
 
 section{
   width: 100%;
@@ -5,25 +18,9 @@ section{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-
-
-  /* background-color: black; */
-  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
 }
-/*
-@keyframes gradient{
-  0%{
-    background-position: 0% 50%;
-  }
-  50%{
-    background-position: 100% 50%;
-  }
-  100%{
-    background-position: 0% 50%;
-  }
-} */
 
 .box{
   position: relative;
@@ -31,12 +28,11 @@ section{
 
 .box .square{
   position: absolute;
-  background:rgba(255, 255, 255, 0.1);
+  background:rgba(59, 59, 59, 0.418);
   backdrop-filter:blur(5px);
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  /* border-radius: 50%; */
   animation: square 10s linear infinite;
   animation-delay: calc(-1s * var(--i));
 }
@@ -168,11 +164,8 @@ section{
   background:linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 2%);
 }
 
-
 form{
   position: relative;
-  /* width: 100%;
-  height: 100%; */
   min-width: 200px;
   width: 400px;
   max-width: 500px;
@@ -181,13 +174,6 @@ form{
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  /* margin: 40px 20px;
-  padding: 20px 0; */
-  /* background-color: rgba(7, 7, 7, 0.801); */
-  /* border-radius: 5px;
-  border: 1px solid #036fa5; */
-
-
 }
 
 .header{
@@ -208,18 +194,13 @@ form{
 
 .group{
   width: 90%;
-  /* border: 1px solid red; */
 }
 
-
 input{
-  /* border: 1px solid red; */
   color: whitesmoke;
   font-weight: bold;
   letter-spacing: 1px;
-
 }
-
 
 input:-webkit-autofill {
   border: none;
@@ -229,29 +210,6 @@ input:-webkit-autofill {
   box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
 }
-/*
-.submit{
-  position: relative;
-  display: block;
-  width: 100px;
-  color: white;
-  border-radius: 5px;
-  border: none;
-  margin: 20px 0 0 20px;
-  background-color: rgba(0, 0, 255, 0.479);
-}
-
-.submit:hover{
-  bottom: 3px;
-  background-color: rgb(0, 51, 192);
-  box-shadow:
-    0 0px 30px rgba(0, 177, 247, 0.616)
-  ;
-}
-
-.submit:active{
-  bottom: 1px;
-} */
 
 .toSignUp{
   font-size: 12px;
@@ -264,7 +222,6 @@ input:-webkit-autofill {
   cursor: pointer;
 }
 
-
 ::ng-deep .loginForm .mat-focused .mat-form-field-ripple {
   background-color: #036fa5 !important;
 }
@@ -272,15 +229,11 @@ input:-webkit-autofill {
   color: #036fa5 !important;
 }
 
-
-
  .btn:disabled{
   border-radius: 5px;
   background: rgba(0, 0, 0, 0);
   color: rgba(85, 85, 85, 0.589);
 }
-
-
 
 .btnContainer{
   position: relative;
@@ -288,11 +241,9 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  /* min-height: 10px; */
   background-color: rgba(0, 0, 0, 0.507);
   border-radius: 30px;
   z-index: 4;
-
 }
 
 button{
@@ -301,7 +252,6 @@ button{
 }
 
 .contenedor{
-  /* width: 600px; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -313,10 +263,9 @@ button{
   position: relative;
   width: 155px;
   height: 50px;
-  /* margin: 20px; */
- }
+}
 
- .btn a{
+.btn a{
   position: absolute;
   top: 0;
   left: 0;
@@ -339,21 +288,20 @@ button{
   transition: 0.5s;
   backdrop-filter: blur(15px);
   font-size: 12px;
- }
+}
 
- .btn a span{
+.btn a span{
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 4px;
   font-size: 15px;
+}
 
- }
-
- .btn:hover a{
+.btn:hover a{
   letter-spacing: 3px;
- }
+}
 
- .btn a::before{
+.btn a::before{
   content: '';
   position: absolute;
   top: 0;
@@ -363,11 +311,11 @@ button{
   background: linear-gradient(to left, rgba(255, 255, 255, 0.377), transparent);
   transform: skewX(45deg) translateX(0);
   transition: 0.5s;
- }
+}
 
- .btn:hover a::before{
+.btn:hover a::before{
   transform: skewX(45deg) translateX(200%);
- }
+}
 
 .btn::before{
   content: '';
@@ -381,7 +329,6 @@ button{
   border-radius: 10px;
   transition: 0.5s;
   transition-delay: 0s;
-
 }
 
 .btn:hover::before{
@@ -404,7 +351,6 @@ button{
   border-radius: 10px;
   transition: 0.5s;
   transition-delay: 0s;
-
 }
 
 .btn:hover::after{

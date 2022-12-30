@@ -1,0 +1,7 @@
+<div class="toolbarWrapper">
+  <div class="toolbar">
+    <a routerLink="home">Home</a>
+    <a *ngIf="token!=null" (click)="mainUser()" style="color: rgb(255, 255, 255)">User Main</a>
+    <a (click)="logOut()" *ngIf="token!=null" style="color: red;">Logout</a>
+  </div>
+</div>

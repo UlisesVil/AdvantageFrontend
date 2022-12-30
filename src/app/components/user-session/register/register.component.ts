@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { UserAuthModel } from '../../../models/userAuthModel';
 import { UserAuthService } from '../../../services/user-auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PasswordValidation } from '../../../utils/matchPassword';
-// import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +19,6 @@ export class RegisterComponent implements OnInit {
     private _formBuilder: FormBuilder,
     private _userService: UserAuthService,
     private _router: Router,
-    // private _route: ActivatedRoute,
   ) {
     this.user = new UserAuthModel("","","","","");
     this.formCreate();
@@ -43,12 +40,7 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-
-
   onSubmit(){
-    console.log(this.form.value);
-    console.log(this.form.valid);
-
     if(this.form.valid){
       this.user={
         userName: this.form.value.name,
@@ -59,32 +51,13 @@ export class RegisterComponent implements OnInit {
       }
       this._userService.saveUser(this.user).subscribe(
         res=>{
-          console.log(res.data);
           if(res.data){
-            console.log('Bienvenido Usuario');
-            // this._userService.login(this.user).subscribe(
-            //   res=>{
-            //     setTimeout(()=>{
-            //       let userId=res.payload.id;
-            //       this._router.navigate(['/mainCollaborator', userId])
-            //       // .then(()=>{
-            //       //   window.location.reload();
-            //       // });
-            //     },3000);
-            //   },error=>{
-            //     console.log(<any>error);
-            //   }
-            // );
+            this._router.navigate(['/'])
           }
-
         },error=>{
           console.log(<any>error);
-          console.log('log del error');
-          //this.errorWarning=<any>error.error.message;
         }
       );
     }
-
   }
-
 }

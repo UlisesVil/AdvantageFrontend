@@ -1,3 +1,16 @@
+.wrap{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../../../../assets/Images/backgrounds/login10.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-position:top;
+  background-attachment: fixed;
+}
+
 section{
   width: 100%;
   display: flex;
@@ -6,6 +19,8 @@ section{
   min-height: 100vh;
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
+  flex-wrap: wrap;
+  gap: 30px 30px;
 }
 
 .box{
@@ -20,7 +35,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(35, 32, 32, 0.335);
   backdrop-filter: blur(5px);
   border-radius: 10px;
   box-shadow:  0 25px 45px rgba(0, 0, 0, 0.2);
@@ -40,8 +55,6 @@ section{
 
 form{
   position: relative;
-  /* width: 100%;
-  height: 100%; */
   min-width: 200px;
   width: 400px;
   max-width: 500px;
@@ -50,19 +63,13 @@ form{
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  /* margin: 40px 20px;
-  padding: 20px 0; */
-  /* background-color: rgba(7, 7, 7, 0.801); */
-  /* border-radius: 5px;
-  border: 1px solid #036fa5; */
 }
-
 
 .header{
   width: 90%;
   text-align: center;
-  /* color: yellowgreen; */
 }
+
 .header h1{
   color: #fff;
   letter-spacing: 2px;
@@ -73,20 +80,17 @@ form{
   margin-top: 15px;
   font-size: 15px;
 }
+
 .group{
   width: 90%;
 
 }
 
-
 input{
-  /* border: 1px solid red; */
   color: whitesmoke;
   font-weight: bold;
   letter-spacing: 1px;
-
 }
-
 
 input:-webkit-autofill {
   border: none;
@@ -102,30 +106,57 @@ input:-webkit-autofill {
   margin-bottom: 30px;
 }
 
-
-
-
-
 .signature-pad{
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-size: 10px;
-  width: 100%;
+  width: fit-content;
   height: 100%;
   max-width: 500px;
   border: 1px solid #c5c5c5;
-  background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.08) inset;
   border-radius: 4px;
   padding: 10px;
-
+  background: rgba(234, 234, 234, 0.561);
 }
 
 .signature-pad--body{
   margin: auto;
+  margin-bottom: 5px;
   position: relative;
   flex: 1;
   border: 1px solid #ebebeb;
-  color: black;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.indicator{
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.imageSaved{
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #646464;
+  margin-top: 10px;
+  width: fit-content;
+  background: white;
+}
+
+#canvasId{
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.404);
+}
+
+button{
+  margin: 5px 0px;
 }

@@ -9,9 +9,8 @@ import { UserSessionRoutingModule } from './user-session-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
-
-
-// import { JwtInterceptor } from  '../../interceptors/jwt.interceptor';
+import { CookieService } from 'ngx-cookie-service';
+import { JwtInterceptor } from  '../../interceptors/jwt.interceptor';
 
 
 @NgModule({
@@ -30,6 +29,13 @@ import { RegisterComponent } from './register/register.component';
   exports:[
     LoginComponent,
     RegisterComponent
-  ]
+  ],
+  providers: [
+    CookieService,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi:true
+    }
+  ],
 })
 export class UserSessionModule { }
